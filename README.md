@@ -1,65 +1,99 @@
-# Qwik City App ⚡️
+# 🛒 ScriptAdda – Digital Script Marketplace
 
-- [Qwik Docs](https://qwik.dev/)
-- [Discord](https://qwik.dev/chat)
-- [Qwik GitHub](https://github.com/QwikDev/qwik)
-- [@QwikDev](https://twitter.com/QwikDev)
-- [Vite](https://vitejs.dev/)
+A modern **Digital Marketplace Platform** (like Codecanyon) built using **Qwik, Vite, Tailwind CSS, PostgreSQL & MinIO**, where users can browse, upload, and sell digital scripts, templates, and assets.
 
 ---
 
-## Project Structure
+## 🚀 Features
 
-This project is using Qwik with [QwikCity](https://qwik.dev/qwikcity/overview/). QwikCity is just an extra set of tools on top of Qwik to make it easier to build a full site, including directory-based routing, layouts, and more.
+* 🛍️ Digital Product Marketplace (Scripts, Templates, Assets)
+* 👤 User Authentication System
+* 📦 Product Upload & Management
+* 💳 Purchase / Download System (Planned / Extendable)
+* ☁️ File Storage using MinIO (S3 Compatible)
+* 🗄️ PostgreSQL Database Integration
+* ⚡ Ultra Fast UI with Qwik Framework
+* 🎨 Modern UI with Tailwind CSS
+* 🔍 Search & Filtering System
+* 📱 Fully Responsive Design
 
-Inside your project, you'll see the following directory structure:
+---
+
+## 🛠️ Tech Stack
+
+* **Frontend:** Qwik + Qwik City
+* **Styling:** Tailwind CSS
+* **Backend:** Node.js (Qwik SSR)
+* **Database:** PostgreSQL :contentReference[oaicite:0]{index=0}  
+* **Storage:** MinIO (Object Storage) :contentReference[oaicite:1]{index=1}  
+* **Build Tool:** Vite :contentReference[oaicite:2]{index=2}  
+* **Language:** TypeScript :contentReference[oaicite:3]{index=3}  
+
+---
+
+## 📂 Project Structure
 
 ```
-├── public/
-│   └── ...
-└── src/
-    ├── components/
-    │   └── ...
-    └── routes/
-        └── ...
+project/
+│
+├── src/
+│ ├── routes/ # Pages (Routing system)
+│ ├── components/ # Reusable components
+│
+├── public/ # Static assets
+│
+├── docker-compose.yml # Database & Storage setup
+├── package.json # Scripts & dependencies
+├── vite.config.ts # Build configuration
+├── tsconfig.json # TypeScript config
 ```
 
-- `src/routes`: Provides the directory-based routing, which can include a hierarchy of `layout.tsx` layout files, and an `index.tsx` file as the page. Additionally, `index.ts` files are endpoints. Please see the [routing docs](https://qwik.dev/qwikcity/routing/overview/) for more info.
+---
 
-- `src/components`: Recommended directory for components.
+## ⚙️ Setup Instructions
 
-- `public`: Any static assets, like images, can be placed in the public directory. Please see the [Vite public directory](https://vitejs.dev/guide/assets.html#the-public-directory) for more info.
+### 1️⃣ Clone the Repository
 
-## Add Integrations and deployment
-
-Use the `npm run qwik add` command to add additional integrations. Some examples of integrations includes: Cloudflare, Netlify or Express Server, and the [Static Site Generator (SSG)](https://qwik.dev/qwikcity/guides/static-site-generation/).
-
-```shell
-npm run qwik add # or `yarn qwik add`
+```bash
+git clone https://github.com/your-username/scriptadda.git
+cd scriptadda
 ```
 
-## Development
 
-Development mode uses [Vite's development server](https://vitejs.dev/). The `dev` command will server-side render (SSR) the output during development.
-
-```shell
-npm start # or `yarn start`
+2️⃣ Install Dependencies
+```bash
+npm install
 ```
 
-> Note: during dev mode, Vite may request a significant number of `.js` files. This does not represent a Qwik production build.
 
-## Preview
-
-The preview command will create a production build of the client modules, a production build of `src/entry.preview.tsx`, and run a local server. The preview server is only for convenience to preview a production build locally and should not be used as a production server.
-
-```shell
-npm run preview # or `yarn preview`
+3️⃣ Start Development Server
+```bash
+npm run dev
 ```
 
-## Production
+4️⃣ Run Docker Services (IMPORTANT)
+```bash
+👉 Database & Storage start karo:
 
-The production build will generate client and server modules by running both client and server build commands. The build command will use Typescript to run a type check on the source code.
+docker-compose up -d
 
-```shell
-npm run build # or `yarn build`
+👉 Services include:
+
+PostgreSQL → localhost:5432
+MinIO → http://localhost:9001
 ```
+
+5️⃣ Build Project
+```bash
+npm run build
+```
+
+6️⃣ Preview Production
+```bash
+npm run preview
+🐳 Docker Configuration
+```
+
+
+npm run lint      # Run ESLint
+npm run fmt       # Format code
