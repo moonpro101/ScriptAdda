@@ -95,5 +95,3 @@ npm run preview
 ```
 
 
-npm run lint      # Run ESLint
-npm run fmt       # Format code
